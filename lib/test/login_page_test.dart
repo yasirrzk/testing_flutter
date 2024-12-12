@@ -9,9 +9,7 @@ void main(){
       await tester.pumpWidget(
           MaterialApp(home: LoginPage(),)
       );
-      // memverifikasi ada text login pada AppBar/button
       expect(find.text("Login"), findsAny);
-      // memverifikasi adanya key username
       expect(find.byKey(const Key('username')), findsOneWidget);
       expect(find.byKey(const Key('password')), findsOneWidget);
     },);
@@ -20,10 +18,8 @@ void main(){
       await tester.pumpWidget(
           MaterialApp(home: LoginPage(),)
       );
-      // mengisi  text pada field
       await tester.enterText(find.byKey(const Key('username')), 'testuser');
       await tester.enterText(find.byKey(const Key('password')), 'test123');
-      // verifikasi hasil inputan
       expect(find.text('testuser'), findsOneWidget);
       expect(find.text('test123'), findsOneWidget);
     },);

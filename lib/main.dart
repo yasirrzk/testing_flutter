@@ -17,4 +17,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// Export MyApp agar bisa digunakan di test

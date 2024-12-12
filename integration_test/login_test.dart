@@ -7,17 +7,15 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   testWidgets('login test', (WidgetTester tester) async {
-    await tester.pumpWidget(const app.MyApp());  // Ubah ini
+    await tester.pumpWidget(const app.MyApp());
     await tester.pumpAndSettle();
 
-    // verifikasi AppBar title "Login" tampil
     expect(find.widgetWithText(AppBar, "Login"), findsOneWidget);
 
-    // mengisi text pada field
     await tester.enterText(find.byKey(const Key('username')), 'testuser');
     await tester.enterText(find.byKey(const Key('password')), 'test123');
 
-    // verifikasi hasil inputan
+
     expect(find.text('testuser'), findsOneWidget);
     expect(find.text('test123'), findsOneWidget);
 
